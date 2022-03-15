@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-
     HomeComponent,
     NavbarComponent,
     HeaderComponent,
-    TecnicoListComponent
+    TecnicoListComponent,
+    LoginComponent
   ],
   imports: [
     CoreModule,
