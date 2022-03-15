@@ -10,9 +10,14 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // Para realizar requisições HTTP
 import { HttpClientModule } from '@angular/common/http';
 
+// Componentes do projeto
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavbarComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,
