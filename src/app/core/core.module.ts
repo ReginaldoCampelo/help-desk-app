@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 // Componentes do projeto
-
+import { ToastrModule } from 'ngx-toastr';
 
 // Imports para componentes do Angular Material
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -29,12 +29,20 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatTableModule } from "@angular/material/table";
 
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+
+    // Toastr de Mensagens
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true
+    }),
 
     MatButtonModule,
     // Forms
@@ -70,6 +78,7 @@ import { MatTableModule } from "@angular/material/table";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule,
 
     // shared angular material modules
     MatButtonModule,
