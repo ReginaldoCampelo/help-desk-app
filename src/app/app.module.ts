@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+    TecnicoListComponent
   ],
   imports: [
     CoreModule,
