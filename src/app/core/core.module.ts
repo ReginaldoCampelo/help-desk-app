@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 // Componentes do projeto
-import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 // Imports para componentes do Angular Material
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -30,9 +30,7 @@ import { MatListModule } from "@angular/material/list";
 import { MatTableModule } from "@angular/material/table";
 
 @NgModule({
-  declarations: [
-    NavbarComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     BrowserModule,
@@ -90,7 +88,7 @@ import { MatTableModule } from "@angular/material/table";
     MatTableModule,
 
     // shared components
-    NavbarComponent
+    
   ]
 })
 export class CoreModule { }
