@@ -42,7 +42,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ReactiveFormsModule,
 
     // shared components
-
+    NavbarComponent
   ]
 })
 export class CoreModule { }
