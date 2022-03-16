@@ -36,10 +36,10 @@ export class TecnicoCreateComponent implements OnInit {
   create(): void {
     this.service.create(this.tecnico).subscribe(() => {
       this.toastr.success('Técnico cadastrado com sucesso', 'Cadastro');
-      this.router.navigate(['tecnicos']);
+      this.router.navigate(['tecnicos'])
     }, ex => {
-      if(ex.error.erros) {
-        ex.error.erros.forEach(element => {
+      if(ex.error.errors) {
+        ex.error.errors.forEach(element => {
           this.toastr.error(element.message);
         });
       } else {
