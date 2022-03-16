@@ -28,6 +28,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from "@angular/material/list";
 import { MatTableModule } from "@angular/material/table";
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -43,6 +44,9 @@ import { MatTableModule } from "@angular/material/table";
       closeButton: true,
       progressBar: true
     }),
+
+    // iMask do CPF
+    NgxMaskModule.forRoot(),
 
     MatButtonModule,
     // Forms
@@ -79,6 +83,7 @@ import { MatTableModule } from "@angular/material/table";
     FormsModule,
     ReactiveFormsModule,
     ToastrModule,
+    NgxMaskModule,
 
     // shared angular material modules
     MatButtonModule,

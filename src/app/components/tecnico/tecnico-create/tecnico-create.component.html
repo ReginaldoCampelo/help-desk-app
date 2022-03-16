@@ -5,37 +5,37 @@
         <img class="fullWidth" src="assets/images/tecnico-create.svg" alt="Cadastrar Tecnico Image">
 
         <section class="section">
-            <mat-checkbox class="margin" >Admin</mat-checkbox>
-            <mat-checkbox class="margin" >Cliente</mat-checkbox>
-            <mat-checkbox class="margin" >Técnico</mat-checkbox>
+            <mat-checkbox class="margin" color="primary" >Admin</mat-checkbox>
+            <mat-checkbox class="margin" color="primary" >Cliente</mat-checkbox>
+            <mat-checkbox class="margin" color="primary" >Técnico</mat-checkbox>
         </section>
 
         <mat-form-field class="fullWidth" appearance="legacy">
             <mat-label>Nome</mat-label>
-            <input matInput placeholder="">
+            <input [formControl]="nome" required matInput placeholder="" maxlength="30">
             <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="legacy">
             <mat-label>CPF</mat-label>
-            <input type="number" matInput placeholder="">
+            <input [formControl]="cpf" required matInput placeholder="" mask="000.000.000-00" maxlength="14">
             <mat-icon matSuffix>pin</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="legacy">
             <mat-label>E-mail</mat-label>
-            <input matInput placeholder="">
+            <input [formControl]="email" required  matInput placeholder="" maxlength="50">
             <mat-icon matSuffix>alternate_email</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth mb1" appearance="legacy">
             <mat-label>Senha</mat-label>
-            <input type="password" matInput placeholder="">
+            <input [formControl]="senha" required  type="password" matInput placeholder="" maxlength="25">
             <mat-icon matSuffix>no_encryption</mat-icon>
         </mat-form-field>
 
-        <button class="fullWidth" mat-flat-button color="primary">Cadastrar</button>
-        <button class="fullWidth" mat-stroked-button color="warn">Cancelar</button>
+        <button [disabled]="!validarCampos()" class="fullWidth" mat-flat-button color="primary">Cadastrar</button>
+        <button routerLink="../" class="fullWidth" mat-stroked-button color="warn">Cancelar</button>
 
     </form>
 </div>
