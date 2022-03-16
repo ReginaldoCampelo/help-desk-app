@@ -14,8 +14,17 @@ export class TecnicoListComponent implements OnInit {
     {
       id: 1,
       nome: 'Reginaldo Campelo',
-      cpf: '044.370.343-41',
-      email: 'regin.developer@gmail.com',
+      cpf: '627.627.470-40',
+      email: 'reginaldo@mail.com',
+      senha: '1234',
+      perfis: ['0'],
+      dataCriacao: '15/03/2022'
+    },
+    {
+      id: 2,
+      nome: 'Natalia Damasceno',
+      cpf: '559.839.330-19',
+      email: 'nataliapereirausa@gmail.com',
       senha: '1234',
       perfis: ['0'],
       dataCriacao: '15/03/2022'
