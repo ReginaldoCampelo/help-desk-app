@@ -6,12 +6,12 @@
 
 
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label>E-mail</mat-label>
+            <mat-label> <mat-icon>person</mat-icon> E-mail</mat-label>
             <input [formControl]="email" required [(ngModel)]="creds.email" name="email" matInput placeholder="Ex. exemplo@mail.com">
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Senha</mat-label>
+            <mat-label> <mat-icon>lock</mat-icon> Senha</mat-label>
             <input [formControl]="senha" required [(ngModel)]="creds.senha" name="senha" type="password" matInput placeholder="Ex. 123456">
         </mat-form-field>
 
