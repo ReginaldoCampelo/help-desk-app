@@ -1,1 +1,41 @@
-<p>tecnico-create works!</p>
+<div class="container mat-elevation-z8">
+    <form class="form">
+
+        <h1 class="fullWidth">Cadastrar Técnico</h1>
+        <img class="fullWidth" src="assets/images/tecnico-create.svg" alt="Cadastrar Tecnico Image">
+
+        <section class="section">
+            <mat-checkbox class="margin" >Admin</mat-checkbox>
+            <mat-checkbox class="margin" >Cliente</mat-checkbox>
+            <mat-checkbox class="margin" >Técnico</mat-checkbox>
+        </section>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+            <mat-label>CPF</mat-label>
+            <input type="number" matInput placeholder="">
+            <mat-icon matSuffix>pin</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="legacy">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="">
+            <mat-icon matSuffix>alternate_email</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth mb1" appearance="legacy">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput placeholder="">
+            <mat-icon matSuffix>no_encryption</mat-icon>
+        </mat-form-field>
+
+        <button class="fullWidth" mat-flat-button color="primary">Cadastrar</button>
+        <button class="fullWidth" mat-stroked-button color="warn">Cancelar</button>
+
+    </form>
+</div>
