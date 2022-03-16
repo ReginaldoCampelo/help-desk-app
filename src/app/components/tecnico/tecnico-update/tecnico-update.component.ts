@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Tecnico } from 'src/app/models/tecnico';
 import { TecnicoService } from 'src/app/services/tecnico.service';
 
 @Component({
-  selector: 'hdk-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'hdk-tecnico-update',
+  templateUrl: './tecnico-update.component.html',
+  styleUrls: ['./tecnico-update.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class TecnicoUpdateComponent implements OnInit {
 
   tecnico: Tecnico = {
     id: '',
@@ -27,15 +27,23 @@ export class TecnicoCreateComponent implements OnInit {
   email: FormControl = new FormControl(null, [Validators.email, Validators.minLength(12), Validators.maxLength(50)]);
   senha: FormControl = new FormControl(null, [Validators.minLength(6), Validators.required]);
 
-  constructor(private service: TecnicoService, private toastr: ToastrService, private router: Router) { }
+  constructor(private service: TecnicoService, private toastr: ToastrService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.tecnico.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
   }
 
+  findById(): void {
+    this.service.findById(this.tecnico.id).subscribe( response => {
+      response.perfis = []
+      this.tecnico = response;
+    })
+  }
   
-  create(): void {
-    this.service.create(this.tecnico).subscribe(() => {
-      this.toastr.success('Técnico cadastrado com sucesso', 'Cadastro');
+  update(): void {
+    this.service.update(this.tecnico).subscribe(() => {
+      this.toastr.success('Técnico atualizado com sucesso', 'Updated');
       this.router.navigate(['tecnicos'])
     }, ex => {
       if(ex.error.errors) {
@@ -62,3 +70,4 @@ export class TecnicoCreateComponent implements OnInit {
     return this.nome.valid && this.cpf.valid && this.email.valid && this.senha.valid;
   }
 }
+
