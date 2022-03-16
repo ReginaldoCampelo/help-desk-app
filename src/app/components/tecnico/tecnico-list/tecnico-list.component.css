@@ -21,3 +21,12 @@ table {
       text-align: center;
       margin-bottom: 2rem;
   }
+
+  .edit {
+      color: dodgerblue;
+      padding-right: .5rem;
+  }
+
+  .delete {
+      color: crimson;
+  }
