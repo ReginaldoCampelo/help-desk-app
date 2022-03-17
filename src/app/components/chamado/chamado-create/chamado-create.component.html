@@ -6,14 +6,14 @@
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Título do Chamado</mat-label>
-            <input [formControl]="titulo" required matInput placeholder="Ex. Trocar bateria de notebook" minlength="3" maxlength="45">
+            <input [(ngModel)]="chamado.titulo" name="titulo" [formControl]="titulo" required matInput placeholder="Ex. Trocar bateria de notebook" minlength="3" maxlength="45">
         </mat-form-field>
     </form>
 
     <div class="status-prioridade">
         <mat-form-field appearance="outline">
             <mat-label>Selecione um status</mat-label>
-            <mat-select [formControl]="status" required >
+            <mat-select [(ngModel)]="chamado.status" name="status" [formControl]="status" required >
                 <mat-option value="0">Aberto</mat-option>
                 <mat-option value="1">Em andamento</mat-option>
                 <mat-option value="2">Encerrado</mat-option>
@@ -22,7 +22,7 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Selecione uma prioridade</mat-label>
-            <mat-select [formControl]="prioridade" required >
+            <mat-select [(ngModel)]="chamado.prioridade" name="prioridade" [formControl]="prioridade" required >
                 <mat-option value="0">Baixa</mat-option>
                 <mat-option value="1">Média</mat-option>
                 <mat-option value="2">Alta</mat-option>
@@ -33,7 +33,7 @@
     <div class="tecnico">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um tecnico</mat-label>
-            <mat-select [formControl]="tecnico" required >
+            <mat-select [(ngModel)]="chamado.tecnico" name="tecnico" [formControl]="tecnico" required >
                 <mat-option *ngFor="let tecnico of tecnicos" value="{{ tecnico.id }}">{{ tecnico.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
@@ -42,7 +42,7 @@
     <div class="cliente">
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um cliente</mat-label>
-            <mat-select [formControl]="cliente" required >
+            <mat-select [(ngModel)]="chamado.cliente" name="cliente" [formControl]="cliente" required >
                 <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
@@ -50,13 +50,13 @@
 
     <form class="form">
         <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Deixe uma descrição</mat-label>
-            <textarea [formControl]="descricao" required  class="descricao" matInput placeholder="Ex. trocar bateria de notebook queimada..." minlength="8" maxlength="180"></textarea>
+            <mat-label>Deixe uma observação</mat-label>
+            <textarea [(ngModel)]="chamado.observacoes" name="observacoes" [formControl]="observacoes" required  class="observacoes" matInput placeholder="Ex. trocar bateria de notebook queimada..." minlength="8" maxlength="180"></textarea>
         </mat-form-field>
     </form>
 
-    <button [disabled]="!validaCampos()" class="full-width" mat-raised-button color="primary">Adicionar</button>
-    <button class="full-width" mat-stroked-button color="warn">Cancelar</button>
+    <button (click)="create()" [disabled]="!validaCampos()" class="full-width" mat-raised-button color="primary">Adicionar</button>
+    <button routerLink="../" class="full-width" mat-stroked-button color="warn">Cancelar</button>
     
 
 </div>
