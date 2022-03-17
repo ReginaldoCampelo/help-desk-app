@@ -34,7 +34,7 @@
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um tecnico</mat-label>
             <mat-select [formControl]="tecnico" required >
-                <mat-option value="0">Reginaldo</mat-option>
+                <mat-option *ngFor="let tecnico of tecnicos" value="{{ tecnico.id }}">{{ tecnico.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
@@ -43,7 +43,7 @@
         <mat-form-field class="full-width" appearance="outline">
             <mat-label>Selecione um cliente</mat-label>
             <mat-select [formControl]="cliente" required >
-                <mat-option value="0">Natalia</mat-option>
+                <mat-option *ngFor="let cliente of clientes" value="{{ cliente.id }}">{{ cliente.nome }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
