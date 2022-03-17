@@ -1,0 +1,38 @@
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+  }
+
+  mat-form-field {
+      width: 100%;
+  }
+
+  button {
+      width: 100%;
+  }
+
+  h1 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+
+  .edit {
+      color: dodgerblue;
+      padding-right: .5rem;
+  }
+
+  .delete {
+      color: crimson;
+  }
+
+  .marginGp {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 2rem 2rem 2rem;
+  }
