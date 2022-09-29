@@ -13,8 +13,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   creds: Credenciais = {
-    email: '',
-    senha: ''
+    email: 'admin@helpdesk.com',
+    senha: 'unique'
   }
 
   email = new FormControl(null, Validators.email);
